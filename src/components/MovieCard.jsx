@@ -1,9 +1,14 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addItem } from "../store/cartSlice";
+import { addItem, removeItem } from "../store/cartSlice";
 
 function MovieCard({ movie }) {
+   
     const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.cart.cartItems);
+
+  
+    const cartItem = cartItems.find((item) => item.id === movie.id);
 
     return(
         <div className="movie-card">
@@ -17,7 +22,16 @@ function MovieCard({ movie }) {
             <p>{movie.release_date?.slice(0, 4)}</p>
             <p>{movie.vote_average.toFixed(1)}</p>
             <p className="price">129 kr</p>
+            {cartItem ? (
+                <div className="quantity">
+                    <button onClick={() => dispatch(removeItem(movie.id))}>–</button>
+                    <span>{cartItem.quantity}</span>
+                    <button onClick={() => dispatch(addItem(movie))}>+</button>
+                </div>
+
+            ) : (
             <button onClick={() => dispatch(addItem(movie))}>Lägg i kundvagn</button>
+            )}
         </div>
         </div>
     );

@@ -98,3 +98,21 @@
     align-items: center;
     gap: 10px;
 }
+
+.back-button {
+    margin-top: 120px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    background-color: #c77dff;
+    color: #17101f;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .back-button:hover {
+        background-color: #d59aff;
+    }
+}

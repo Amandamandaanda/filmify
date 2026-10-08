@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeItem, addItem } from "../store/cartSlice";
 import '../Cart.css';
+import { Link } from "react-router-dom";
 
 
 function Cart() {
@@ -29,6 +30,7 @@ function Cart() {
                     <p className="cart-item-price"> {129 * movie.quantity} kr</p>
                 
                 </div>
+                
             </div>
             ))}
             </div>
@@ -36,8 +38,13 @@ function Cart() {
                 <h2>Totalt</h2>
                 <p>{totalPrice} kr</p>
             </div>
+
             </>
+
             )} 
+                                  <Link to="/">
+    <button className="back-button">Tillbaka till filmer</button>
+</Link>
         </main>
     )
 }

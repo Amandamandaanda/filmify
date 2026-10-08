@@ -56,11 +56,6 @@ main h1::after {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.movie-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
-}
-
 .movie-card-photo {
   width: 100%;
   aspect-ratio: 2 / 3;
@@ -118,14 +113,6 @@ main h1::after {
   transition: 0.2s ease;
 }
 
-.movie-info button:hover {
-  background-color: #d59aff;
-}
-
-.movie-card:hover .movie-info h2 {
-  color: #c77dff;
-}
-
 @media (min-width: 600px) {
   main {
     padding: 60px 30px;
@@ -144,7 +131,7 @@ label {
 
 select {
   margin-left: 10px;
-  padding: 10 px 14px;
+  padding: 10px 14px;
   border: 1px solid #3a3344;
   border-radius: 10px;
   background-color: #1b1822;
@@ -152,12 +139,19 @@ select {
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 select:focus{
   outline: none;
   border-color: #c77dff;
   box-shadow: 0 0 0 2px rgba(199, 125, 255, 0.2);
+}
+.year-filter {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 20px;
 }
 
 @media (min-width: 900px) {
@@ -169,6 +163,10 @@ select:focus{
     font-size: 2.8rem;
   }
 
+  .year-filter {
+    max-width: 1200px;
+  }
+
   .movie-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 26px;
@@ -178,6 +176,35 @@ select:focus{
 @media (min-width: 1200px) {
   .movie-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  }
+
+  .movie-info button:hover {
+    background-color: #d59aff;
+  }
+
+  .movie-card:hover .movie-info h2 {
+    color: #c77dff;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  }
+
+  .movie-info button:hover {
+    background-color: #d59aff;
+  }
+
+  .movie-card:hover .movie-info h2 {
+    color: #c77dff;
   }
 }
 

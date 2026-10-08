@@ -18,7 +18,7 @@ function Home({ movies, loading, error }) {
     <main>
       <h1>Filmer</h1>
 
-      <label> Filtrera efter år: 
+      <label className="year-filter"> Filtrera efter år: 
         <select value={selectedYear} onChange={(event) => setSelectedYear(event.target.value)}> 
           <option value="Alla">Alla år</option> 
           {years.map((year) => ( <option key={year} value={year}> {year} </option> ))} 

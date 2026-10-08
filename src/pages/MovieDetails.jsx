@@ -1,14 +1,16 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./MovieDetails.css";
-import { addItem } from "../store/cartSlice";
-import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "../store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function MovieDetails({movies}) {
     const {id} = useParams();
     const dispatch = useDispatch();
-
+    const cartItems = useSelector((state) => state.cart.cartItems);
     const movie = movies.find((movie) => movie.id.toString() === id);
+    const cartItem = cartItems.find((item) => item.id === movie.id);
+    
 
     if (!movie) {
         return <p>Loading...</p>
@@ -21,14 +23,25 @@ function MovieDetails({movies}) {
             <p>Betyg: {movie.vote_average.toFixed(1)}</p>
             <p>Utgivningsdatum: {movie.release_date}</p>
             <p>{movie.overview}</p>
-            <h2>129 kr</h2>
-            <div className="buttons">
-                 <button onClick={() => dispatch(addItem(movie))}>Lägg i kundvagn</button>
+            <h2>129 kr</h2>{cartItem ? (
+                            <div className="quantity">
+                                <button onClick={() => dispatch(removeItem(movie.id))}>–</button>
+                                <span>{cartItem.quantity}</span>
+                                <button onClick={() => dispatch(addItem(movie))}>+</button>
+                            </div>
+            
+                        ) : (
+                            <div className="buttons">
+                        <button onClick={() => dispatch(addItem(movie))}>Lägg i kundvagn</button>
+                        
+            </div>
+            )}
                 <Link to="/">
                 <button>Tillbaka till filmer</button>
                 
                 </Link>
-            </div>
+            
+            
 
         </main>
     );
