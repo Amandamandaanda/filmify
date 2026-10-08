@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b1822;
+    border-bottom: 1px solid #302b3a;
+    padding: 16px 20px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5 rem;
+    color: #c77dff
+}
+
+.navbar a{
+    text-decoration: none;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.cart-link{
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #c77dff;
+    color: #17101f;
+    padding: 8px 14px;
+    font-weight: 800;
+}
+
+.cart-link:hover{
+    background-color: #d59aff;
+}
+
+@media (min-width: 600px) {
+    .navbar {
+        padding: 16px 30px;
+    }
+
+    .logo {
+        font-size: 2 rem;
+    }
+
+    .cart-link {
+        padding: 9px 14px;
+        font-size: 1rem;
+    }
+    
+}
