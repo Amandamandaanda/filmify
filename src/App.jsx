@@ -15,8 +15,9 @@ function App() {
 useEffect(() => { 
   
   const loadMovies = async () => {
+    
     try {
-      
+      //throw new Error("test");
   const response = await fetch (
   `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
     
@@ -25,7 +26,7 @@ useEffect(() => {
       }
       const data = await response.json();
       console.log(data);
-
+      
       setMovies(data.results);
     } catch (err) {
       setError(err.message);

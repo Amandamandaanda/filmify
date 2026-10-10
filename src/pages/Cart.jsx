@@ -42,9 +42,11 @@ function Cart() {
             </>
 
             )} 
-                                  <Link to="/">
-    <button className="back-button">Tillbaka till filmer</button>
-</Link>
+            <div className="cart-buttons">
+            <Link to="/"><button className="back-button">Tillbaka till filmer</button>
+            </Link>
+            <button className="back-button payment-button" onClick={ () => alert ("Dina filmer är på väg!")}>Till betalning</button>
+            </div>
         </main>
     )
 }
