@@ -7,6 +7,7 @@ import Cart from "./pages/Cart";
 import NavBar from './components/NavBar';
 
 function App() {
+  
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);

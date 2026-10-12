@@ -5,8 +5,8 @@ import '../index.css';
 
 
 function Home({ movies, loading, error }) {
-  const [selectedYear, setSelectedYear] = useState("Alla");
 
+  const [selectedYear, setSelectedYear] = useState("Alla");
   const years = [
     ...new Set(movies.map((movie) => movie.release_date.slice(0, 4))
   ),
@@ -17,7 +17,6 @@ function Home({ movies, loading, error }) {
   return (
     <main>
       <h1>Filmer</h1>
-
       <label className="year-filter"> Filtrera efter år: 
         <select value={selectedYear} onChange={(event) => setSelectedYear(event.target.value)}> 
           <option value="Alla">Alla år</option> 

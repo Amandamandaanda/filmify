@@ -6,8 +6,6 @@ function MovieCard({ movie }) {
    
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.cartItems);
-
-  
     const cartItem = cartItems.find((item) => item.id === movie.id);
 
     return(
@@ -28,7 +26,6 @@ function MovieCard({ movie }) {
                     <span>{cartItem.quantity}</span>
                     <button onClick={() => dispatch(addItem(movie))}>+</button>
                 </div>
-
             ) : (
             <button onClick={() => dispatch(addItem(movie))}>Lägg i kundvagn</button>
             )}
