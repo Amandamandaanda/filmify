@@ -84,6 +84,8 @@ function MovieDetails({movies}) {
                         <button onClick={() => dispatch(addItem(movie))}>Lägg i kundvagn</button>  
                      </div>
                     )}
+
+                    
                     <section className="trailer-section">
                         <h2>Trailer</h2>
                         {trailerLoading && (
