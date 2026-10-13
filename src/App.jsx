@@ -18,8 +18,7 @@ useEffect(() => {
   const loadMovies = async () => {
     
     try {
-      //throw new Error("test");
-  const response = await fetch (
+   const response = await fetch (
   `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
     
       if (!response.ok) {

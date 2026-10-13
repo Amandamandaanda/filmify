@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeItem, addItem } from "../store/cartSlice";
-import '../Cart.css';
+import './Cart.css';
 import { Link } from "react-router-dom";
 
 
